@@ -1,0 +1,21 @@
+body {
+    background-color: gainsboro;
+}
+
+div#chart-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rebeccapurple;
+    width: 50vw;
+    height: 50vh;
+    margin: 0px auto;
+    justify-content: space-evenly;
+}
+
+div.employee-bar-container:nth-child(odd) .employee-age, div.employee-bar-container:nth-child(odd) .employee-salery {
+    background-color: darkseagreen;
+}
+
+div.employee-bar-container:nth-child(even) .employee-age, div.employee-bar-container:nth-child(even) .employee-salery {
+    background-color: cadetblue;
+}
