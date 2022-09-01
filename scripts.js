@@ -55,18 +55,26 @@ function renderBarGraph (type) {
     employeeDataSet.employees.sort(type);
     $('#chart-container').empty();
     if (type === sortBySalary){
+        const maxSalery = employeeDataSet.employees[0].salary;
+        const minSalery = employeeDataSet.employees[employeeDataSet.employees.length - 1].salary;
+        const totalScalevalue = maxSalery + (minSalery*1.5);
         console.log('render by salary graph');
         employeeDataSet.employees.forEach((employee, index) => {
+            const barPercentage = (employee.salary / totalScalevalue) * 100;
             $('#chart-container').append('<div id="'+ employee.name + index +'" class="employee-bar-container"></div>');
             $('#'+ employee.name + index +'').append('<div class="employee-name">' + employee.name + '</div>');
-            $('#'+ employee.name + index +'').append('<div class="employee-salary" style="width:' + employee.salary + '%">' + employee.salary + '</div>');
+            $('#'+ employee.name + index +'').append('<div class="employee-salary" style="width:' + barPercentage + '%">' + employee.salary + '</div>');
         });
     } else if (type === sortByAge) {
+        const maxAge = employeeDataSet.employees[0].age;
+        const minAge = employeeDataSet.employees[employeeDataSet.employees.length - 1].age;
+        const totalScalevalue = maxAge + (minAge*1.5);
         console.log('render by age graph');
         employeeDataSet.employees.forEach((employee, index) => {
+            const barPercentage = (employee.age / totalScalevalue) * 100;
             $('#chart-container').append('<div id="'+ employee.name + index +'" class="employee-bar-container"></div>');
             $('#'+ employee.name + index +'').append('<div class="employee-name">' + employee.name + '</div>');
-            $('#'+ employee.name + index +'').append('<div class="employee-age" style="width:' + employee.age + '%">' + employee.age + '</div>');
+            $('#'+ employee.name + index +'').append('<div class="employee-age" style="width:' + barPercentage + '%">' + employee.age + '</div>');
         });
     } else {
         console.log('error: invalid value');

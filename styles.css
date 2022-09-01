@@ -12,10 +12,10 @@ div#chart-container {
     justify-content: space-evenly;
 }
 
-div.employee-bar-container:nth-child(odd) .employee-age, div.employee-bar-container:nth-child(odd) .employee-salery {
+div.employee-bar-container:nth-child(odd) .employee-age, div.employee-bar-container:nth-child(odd) .employee-salary {
     background-color: darkseagreen;
 }
 
-div.employee-bar-container:nth-child(even) .employee-age, div.employee-bar-container:nth-child(even) .employee-salery {
+div.employee-bar-container:nth-child(even) .employee-age, div.employee-bar-container:nth-child(even) .employee-salary {
     background-color: cadetblue;
 }
