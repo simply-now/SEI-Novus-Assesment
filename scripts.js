@@ -7,7 +7,7 @@ let employeeDataSet =
                 "salary" : 30100,
             },
             {
-                "name"  : "BobBobBobBobBobBob",
+                "name"  : "Bob",
                 "age" : 60,
                 "salary" : 102000,
             },
