@@ -7,7 +7,7 @@ let employeeDataSet =
                 "salary" : 30100,
             },
             {
-                "name"  : "Bob",
+                "name"  : "BobBobBobBobBobBob",
                 "age" : 60,
                 "salary" : 102000,
             },
@@ -57,23 +57,23 @@ function renderBarGraph (type) {
     if (type === sortBySalary){
         const maxSalery = employeeDataSet.employees[0].salary;
         const minSalery = employeeDataSet.employees[employeeDataSet.employees.length - 1].salary;
-        const totalScalevalue = maxSalery + (minSalery*1.5);
+        const totalScalevalue = maxSalery + (minSalery / 2);
         console.log('render by salary graph');
         employeeDataSet.employees.forEach((employee, index) => {
             const barPercentage = (employee.salary / totalScalevalue) * 100;
             $('#chart-container').append('<div id="'+ employee.name + index +'" class="employee-bar-container"></div>');
-            $('#'+ employee.name + index +'').append('<div class="employee-name">' + employee.name + '</div>');
+            $('#'+ employee.name + index +'').append('<div class="employee-name" style="left: calc(-40px - ' + .5 * employee.name.length + 'em);">' + employee.name + '</div>');
             $('#'+ employee.name + index +'').append('<div class="employee-salary" style="width:' + barPercentage + '%">' + employee.salary + '</div>');
         });
     } else if (type === sortByAge) {
         const maxAge = employeeDataSet.employees[0].age;
         const minAge = employeeDataSet.employees[employeeDataSet.employees.length - 1].age;
-        const totalScalevalue = maxAge + (minAge*1.5);
+        const totalScalevalue = maxAge + (minAge / 2);
         console.log('render by age graph');
         employeeDataSet.employees.forEach((employee, index) => {
             const barPercentage = (employee.age / totalScalevalue) * 100;
             $('#chart-container').append('<div id="'+ employee.name + index +'" class="employee-bar-container"></div>');
-            $('#'+ employee.name + index +'').append('<div class="employee-name">' + employee.name + '</div>');
+            $('#'+ employee.name + index +'').append('<div class="employee-name" style="left: calc(-40px - ' + .5 * employee.name.length + 'em);">' + employee.name + '</div>');
             $('#'+ employee.name + index +'').append('<div class="employee-age" style="width:' + barPercentage + '%">' + employee.age + '</div>');
         });
     } else {
